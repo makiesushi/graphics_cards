@@ -34,8 +34,8 @@
 						if(!in_array($brand, $brandAccepted)){
 							echo "Unknown brand! (Case sensitive!)";
 						}
-						else if($price < 100){
-							echo "Price too low!";
+						else if(!is_numeric($price) || $price < 100){
+							echo "Price too low or not a number!";
 						}
 						else{
 							require('inc/connect.php');
